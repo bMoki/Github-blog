@@ -28,7 +28,7 @@ export function Home() {
     )
     const fetchIssues = useCallback(
         async (query?: string) => {
-            const response = await api.get(`/search/issues?q=${query}%20repo:bMoki/github-blog`);
+            const response = await api.get(`/search/issues?q=repo:bMoki/Github-blog%20${query ? query : ''}`);
             setPosts(response.data.items);
             console.log(response.data.items);
         }, []

@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Content, Info, InfoContainer, InfoFooter, InfoHeader, LinkLeft, LinkRight, PostContainer } from "./styles";
-import { faArrowUpRightFromSquare, faCalendarDay, faComment, faChevronLeft, faTruckLoading } from '@fortawesome/free-solid-svg-icons';
+import { faArrowUpRightFromSquare, faCalendarDay, faComment, faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { NavLink, useParams } from "react-router-dom";
 import { useState, useCallback, useEffect } from "react";
@@ -16,7 +16,7 @@ export function Post() {
     const [post, setPost] = useState<PostType | null>(null);
     const fetchPost = useCallback(
         async () => {
-            const response = await api.get(`/repos/rocketseat-education/reactjs-github-blog-challenge/issues/${issueNumber}`);
+            const response = await api.get(`/repos/bMoki/Github-blog/issues/${issueNumber}`);
             setPost(response.data);
             console.log(response.data);
         }, []
